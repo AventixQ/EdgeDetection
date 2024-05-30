@@ -66,7 +66,7 @@ int main() {
     }
 
     for (int i = 1; i <= 4; ++i) {
-        std::string filename = "input/a" + std::to_string(i) + ".jpg";
+        std::string filename = "input/photo" + std::to_string(i) + ".jpg";
         Mat src = imread(filename);
         if (src.empty()) {
             std::cerr << "Error: Unable to load image " << filename << "!" << std::endl;
@@ -100,11 +100,11 @@ int main() {
         double average_time = total_time / 10.0;
         resultFile << "photo" << i << ";" << average_time << std::endl;
 
-        imwrite("results/asobel_result_" + std::to_string(i) + ".jpg", sobel_result);
-        imwrite("results/aprewitt_result_" + std::to_string(i) + ".jpg", prewitt_result);
-        imwrite("results/ascharr_result_" + std::to_string(i) + ".jpg", scharr_result);
-        imwrite("results/amorph_result_" + std::to_string(i) + ".jpg", morph_result);
-        imwrite("results/alaplacian_result_" + std::to_string(i) + ".jpg", laplacian_result);
+        imwrite("results/sobel_result_" + std::to_string(i) + ".jpg", sobel_result);
+        imwrite("results/prewitt_result_" + std::to_string(i) + ".jpg", prewitt_result);
+        imwrite("results/scharr_result_" + std::to_string(i) + ".jpg", scharr_result);
+        imwrite("results/morph_result_" + std::to_string(i) + ".jpg", morph_result);
+        imwrite("results/laplacian_result_" + std::to_string(i) + ".jpg", laplacian_result);
     }
 
     resultFile.close();
